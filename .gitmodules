@@ -10,4 +10,5 @@
 	url = https://github.com/BeTR-biogeochemistry-modeling/sbetr.git
 [submodule "components/mpas-source"]
 	path = components/mpas-source
-	url = https://github.com/MPAS-Dev/MPAS-Model.git
+	url = https://github.com/amametjanov/MPAS-Model.git
+	branch = theta/hr-prod/ice-threading-updates
