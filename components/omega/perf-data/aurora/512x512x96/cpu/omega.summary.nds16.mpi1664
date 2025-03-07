@@ -1,0 +1,22 @@
+$Id: gptl.c,v 1.157 2011-03-28 20:55:18 rosinski Exp $
+'count' is cumulative. All other stats are max/min
+'on' indicates whether the timer was active during output, and so stats are lower or upper bounds.
+
+name                              on  processes  threads        count      walltotal   wallmax (proc   thrd  )   wallmin (proc   thrd  )
+"Omega:Init"                       -       1664     1664 1.664000e+03   8.608801e+05   517.479 (   426      0)   517.178 (   589      0)
+"Omega:PIO:PIOc_Init_Intracomm"    -       1664     1664 1.664000e+03   2.196856e+01     0.032 (  1360      0)     0.006 (   879      0)
+"Omega:PIO:PIOc_initdecomp"        -       1664     1664 2.163200e+04   8.150359e+03     6.194 (  1558      0)     4.179 (   764      0)
+"Omega:PIO:box_rearrange_create"   -       1664     1664 2.163200e+04   6.680879e+03     4.394 (   422      0)     3.709 (   831      0)
+"Omega:PIO:pio_swapm"              -       1664     1664 1.297920e+05   2.052817e+04    15.440 (   152      0)     5.064 (     0      0)
+"Omega:PIO:PIOc_read_darray"       -       1664     1664 6.489600e+04   1.716025e+04    13.683 (     6      0)     7.140 (  1663      0)
+"Omega:PIO:read_darray_nc_serial"  -       1664     1664 6.489600e+04   4.234648e+01     7.191 (     7      0)     0.000 (    92      0)
+"Omega:PIO:rearrange_io2comp"      -       1664     1664 6.489600e+04   1.602522e+04    12.829 (   136      0)     2.046 (     0      0)
+"Omega:PIO:PIOc_freedecomp"        -       1664     1664 2.163200e+04   2.046235e-01     0.011 (     7      0)     0.000 (   511      0)
+"Omega:PIO:PIOc_sync"              -       1664     1664 3.328000e+03   4.599381e-03     0.000 (  1464      0)     0.000 (  1395      0)
+"Omega:PIO:PIOc_closefile"         -       1664     1664 3.328000e+03   2.060182e+01     0.353 (   526      0)     0.000 (  1463      0)
+"Omega:RunLoop"                    -       1664     1664 1.664000e+03   3.548448e+04    21.968 (   712      0)    20.701 (   885      0)
+"Omega:TimeStep"                   -       1664     1664 9.984000e+04   3.548425e+04    21.968 (   712      0)    20.701 (   885      0)
+"Omega:StateHalo"                  -       1664     1664 9.984000e+04   9.541502e+03     8.599 (    33      0)     2.240 (   857      0)
+"Omega:TracerHalo"                 -       1664     1664 9.984000e+04   4.385073e+03     5.941 (  1656      0)     0.345 (  1279      0)
+"Omega:Finalize"                   -       1664     1664 1.664000e+03   8.771862e-01     0.189 (  1196      0)     0.000 (   708      0)
+

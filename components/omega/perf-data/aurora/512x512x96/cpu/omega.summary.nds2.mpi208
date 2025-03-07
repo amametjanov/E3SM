@@ -1,0 +1,22 @@
+$Id: gptl.c,v 1.157 2011-03-28 20:55:18 rosinski Exp $
+'count' is cumulative. All other stats are max/min
+'on' indicates whether the timer was active during output, and so stats are lower or upper bounds.
+
+name                              on  processes  threads        count      walltotal   wallmax (proc   thrd  )   wallmin (proc   thrd  )
+"Omega:Init"                       -        208      208 2.080000e+02   7.081364e+03    34.123 (   112      0)    33.947 (    77      0)
+"Omega:PIO:PIOc_Init_Intracomm"    -        208      208 2.080000e+02   2.489756e+00     0.022 (     1      0)     0.007 (    76      0)
+"Omega:PIO:PIOc_initdecomp"        -        208      208 2.704000e+03   4.763777e+02     2.711 (    94      0)     1.683 (     0      0)
+"Omega:PIO:box_rearrange_create"   -        208      208 2.704000e+03   3.320642e+02     1.654 (     4      0)     1.538 (   178      0)
+"Omega:PIO:pio_swapm"              -        208      208 1.622400e+04   1.407278e+03     7.742 (    15      0)     1.309 (     0      0)
+"Omega:PIO:PIOc_read_darray"       -        208      208 8.112000e+03   1.319707e+03     8.210 (     0      0)     5.539 (   163      0)
+"Omega:PIO:read_darray_nc_serial"  -        208      208 8.112000e+03   2.965754e+01     5.275 (     0      0)     0.000 (   179      0)
+"Omega:PIO:rearrange_io2comp"      -        208      208 8.112000e+03   1.274375e+03     7.134 (    15      0)     0.582 (     0      0)
+"Omega:PIO:PIOc_freedecomp"        -        208      208 2.704000e+03   4.437663e-01     0.006 (    66      0)     0.000 (   122      0)
+"Omega:PIO:PIOc_sync"              -        208      208 4.160000e+02   7.569345e-04     0.000 (   166      0)     0.000 (    97      0)
+"Omega:PIO:PIOc_closefile"         -        208      208 4.160000e+02   2.612134e-01     0.003 (    93      0)     0.000 (     2      0)
+"Omega:RunLoop"                    -        208      208 2.080000e+02   9.749862e+03    47.205 (     2      0)    46.658 (   174      0)
+"Omega:TimeStep"                   -        208      208 1.248000e+04   9.749825e+03    47.205 (     2      0)    46.658 (   174      0)
+"Omega:StateHalo"                  -        208      208 1.248000e+04   1.210198e+03     9.456 (     1      0)     0.315 (     0      0)
+"Omega:TracerHalo"                 -        208      208 1.248000e+04   2.429313e+02     2.987 (    93      0)     0.164 (   103      0)
+"Omega:Finalize"                   -        208      208 2.080000e+02   9.505686e-01     0.049 (    52      0)     0.000 (     5      0)
+
