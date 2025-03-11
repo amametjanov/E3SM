@@ -1,0 +1,63 @@
+$Id: gptl.c,v 1.157 2011-03-28 20:55:18 rosinski Exp $
+GPTL was built without threading
+HAVE_MPI was true
+  HAVE_COMM_F2C was true
+  ENABLE_PMPI was false
+HAVE_PAPI was false
+Underlying timing routine was MPI_Wtime.
+Per-call utr overhead est (at init): 1.84509e-08 sec.
+Per-call utr overhead est (at end): 1.85599e-08 sec.
+If overhead stats are printed, roughly half the estimated number is
+embedded in the wallclock stats for each timer.
+Print method was most_frequent.
+If a '%_of' field is present, it is w.r.t. the first timer for thread 0.
+If a 'e6_per_sec' field is present, it is in millions of PAPI counts per sec.
+
+A '*' in column 1 below means the timer had multiple parents, though the
+values printed are for all calls.
+Further down the listing may be more detailed information about multiple
+parents. Look for 'Multiple parent info'
+
+Stats for thread 0:
+                                            On  Called Recurse   Wallclock          max          min     UTR Overhead 
+  "Omega:Init"                               -       1    -     517.364868   517.364868   517.364868         0.000000 
+    "Omega:PIO:PIOc_Init_Intracomm"          -       1    -       0.011201     0.011201     0.011201         0.000000 
+    "Omega:PIO:PIOc_initdecomp"              -      13    -       4.931378     2.391755     0.030780         0.000000 
+      "Omega:PIO:box_rearrange_create"       -      13    -       4.220979     1.966554     0.030699         0.000000 
+*       "Omega:PIO:pio_swapm"                -      78    -       5.064363     0.792843     0.000907         0.000003 
+    "Omega:PIO:PIOc_read_darray"             -      39    -      12.643468     2.352005     0.044557         0.000001 
+      "Omega:PIO:read_darray_nc_serial"      -      39    -       6.673077     1.992117     0.002433         0.000001 
+      "Omega:PIO:rearrange_io2comp"          -      39    -       2.046071     0.373659     0.000917         0.000001 
+    "Omega:PIO:PIOc_freedecomp"              -      13    -       0.009591     0.003489     0.000143         0.000000 
+    "Omega:PIO:PIOc_sync"                    -       2    -       0.000003     0.000002     0.000002         0.000000 
+    "Omega:PIO:PIOc_closefile"               -       2    -       0.001313     0.000694     0.000619         0.000000 
+  "Omega:RunLoop"                            -       1    -      21.368364    21.368364    21.368364         0.000000 
+    "Omega:TimeStep"                         -      60    -      21.368193     0.929622     0.082149         0.000002 
+      "Omega:StateHalo"                      -      60    -       5.337566     0.481518     0.000545         0.000002 
+      "Omega:TracerHalo"                     -      60    -       3.108159     0.406061     0.000587         0.000002 
+  "Omega:Finalize"                           -       1    -       0.098112     0.098112     0.098112         0.000000 
+
+Overhead sum =  1.57e-05 wallclock seconds
+Overhead estimate =   0.00453 wallclock seconds
+Overhead bound =   0.00458 wallclock seconds
+Total calls  = 422
+
+Multiple parent info for thread 0:
+Columns are count and name for the listed child
+Rows are each parent, with their common child being the last entry, which is indented.
+Count next to each parent is the number of times it called the child.
+Count next to child is total number of times it was called by the listed parents.
+
+      39 Omega:PIO:box_rearrange_create  
+      39 Omega:PIO:rearrange_io2comp     
+      78   Omega:PIO:pio_swapm             
+
+
+Thread 0 total memory usage = 37.616 KB
+  Hashmem                   = 32.768 KB
+  Regionmem                 = 4.608 KB (papimem portion = 0 KB)
+  Parent/child arrays       = 0.24 KB
+
+Total memory usage all threads = 37.616 KB
+
+threadid[0] = 0
