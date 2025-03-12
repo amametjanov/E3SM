@@ -1,0 +1,22 @@
+$Id: gptl.c,v 1.157 2011-03-28 20:55:18 rosinski Exp $
+'count' is cumulative. All other stats are max/min
+'on' indicates whether the timer was active during output, and so stats are lower or upper bounds.
+
+name                              on  processes  threads        count      walltotal   wallmax (proc   thrd  )   wallmin (proc   thrd  )
+"Omega:Init"                       -       3328     3328 3.328000e+03   1.359046e+07  4083.862 (   765      0)  4083.451 (  2383      0)
+"Omega:PIO:PIOc_Init_Intracomm"    -       3328     3328 3.328000e+03   8.447513e+01     0.098 (  2087      0)     0.005 (   186      0)
+"Omega:PIO:PIOc_initdecomp"        -       3328     3328 4.326400e+04   2.552342e+04     8.493 (  2407      0)     6.940 (   633      0)
+"Omega:PIO:box_rearrange_create"   -       3328     3328 4.326400e+04   2.277966e+04     7.239 (  2011      0)     6.122 (  1548      0)
+"Omega:PIO:pio_swapm"              -       3328     3328 2.595840e+05   3.298112e+04    12.178 (   122      0)     5.015 (     0      0)
+"Omega:PIO:PIOc_read_darray"       -       3328     3328 1.297920e+05   2.432266e+04    10.050 (     0      0)     5.787 (  2702      0)
+"Omega:PIO:read_darray_nc_serial"  -       3328     3328 1.297920e+05   3.018373e+01     5.569 (     0      0)     0.000 (  3311      0)
+"Omega:PIO:rearrange_io2comp"      -       3328     3328 1.297920e+05   2.044712e+04     8.358 (   119      0)     1.011 (     0      0)
+"Omega:PIO:PIOc_freedecomp"        -       3328     3328 4.326400e+04   3.415143e-01     0.012 (     0      0)     0.000 (  2178      0)
+"Omega:PIO:PIOc_sync"              -       3328     3328 6.656000e+03   1.272475e-02     0.000 (  2022      0)     0.000 (  2059      0)
+"Omega:PIO:PIOc_closefile"         -       3328     3328 6.656000e+03   3.823865e+01     0.436 (  1096      0)     0.000 (     7      0)
+"Omega:RunLoop"                    -       3328     3328 3.328000e+03   4.475319e+04    13.896 (  3016      0)    13.127 (  2041      0)
+"Omega:TimeStep"                   -       3328     3328 1.996800e+05   4.475284e+04    13.896 (  3016      0)    13.127 (  2041      0)
+"Omega:StateHalo"                  -       3328     3328 1.996800e+05   1.265969e+04     6.662 (   593      0)     0.956 (   554      0)
+"Omega:TracerHalo"                 -       3328     3328 1.996800e+05   5.821967e+03     5.760 (   216      0)     0.153 (   526      0)
+"Omega:Finalize"                   -       3328     3328 3.328000e+03   1.650875e+00     0.159 (  1506      0)     0.000 (  3074      0)
+
