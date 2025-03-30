@@ -5,8 +5,8 @@ HAVE_MPI was true
   ENABLE_PMPI was false
 HAVE_PAPI was false
 Underlying timing routine was MPI_Wtime.
-Per-call utr overhead est (at init): 1.68503e-08 sec.
-Per-call utr overhead est (at end): 1.67173e-08 sec.
+Per-call utr overhead est (at init): 1.7343e-08 sec.
+Per-call utr overhead est (at end): 1.70781e-08 sec.
 If overhead stats are printed, roughly half the estimated number is
 embedded in the wallclock stats for each timer.
 Print method was most_frequent.
@@ -20,61 +20,61 @@ parents. Look for 'Multiple parent info'
 
 Stats for thread 0:
                                                          On  Called Recurse   Wallclock          max          min     UTR Overhead 
-  "Omega:Init"                                            -       1    -      22.249174    22.249174    22.249174         0.000000 
-    "Omega:PIO:PIOc_Init_Intracomm"                       -       1    -       0.001629     0.001629     0.001629         0.000000 
-    "Omega:Decomp init"                                   -       1    -       9.473976     9.473976     9.473976         0.000000 
-      "Omega:Decomp create"                               -       1    -       9.473930     9.473930     9.473930         0.000000 
-        "Omega:Decomp construct"                          -       1    -       9.472788     9.472788     9.472788         0.000000 
-          "Omega:Decomp read mesh"                        -       1    -       3.522103     3.522103     3.522103         0.000000 
-*           "Omega:PIO:PIOc_sync"                         -       2    -       0.000003     0.000003     0.000001         0.000000 
-*           "Omega:PIO:PIOc_closefile"                    -       2    -       0.000562     0.000330     0.000233         0.000000 
-          "Omega:Decomp part cells"                       -       1    -       0.665214     0.665214     0.665214         0.000000 
-            "Omega:Gather adjacency"                      -       1    -       0.256217     0.256217     0.256217         0.000000 
-            "Omega:Metis partitioning"                    -       1    -       0.395037     0.395037     0.395037         0.000000 
-          "Omega:Decomp rearrange cells"                  -       1    -       0.308504     0.308504     0.308504         0.000000 
-            "Omega:rearrangeCellArrays"                   -       1    -       0.308500     0.308500     0.308500         0.000000 
-              "Omega:rearrangeCellsBcast"                 -     192    -       0.307654     0.072128     0.001132         0.000006 
-              "Omega:rearrangeCellsSearch"                -     192    -       0.000564     0.000013     0.000002         0.000006 
-          "Omega:Decomp part edges"                       -       1    -       2.782511     2.782511     2.782511         0.000000 
-            "Omega:partEdgesOwned"                        -       1    -       0.006873     0.006873     0.006873         0.000000 
-            "Omega:partEdgesOwnerBcast"                   -     192    -       0.216502     0.003955     0.000735         0.000006 
-            "Omega:partEdgesOwnerSearch"                  -     192    -       0.082284     0.000678     0.000354         0.000006 
-            "Omega:partEdgesHalo"                         -       1    -       0.005278     0.005278     0.005278         0.000000 
-            "Omega:partEdgesFinalLoc"                     -       1    -       2.470663     2.470663     2.470663         0.000000 
-              "Omega:partEdgesFinalBcast"                 -     192    -       2.137818     0.014295     0.002575         0.000006 
-              "Omega:partEdgesFinalSearch"                -     192    -       0.332564     0.010098     0.000005         0.000006 
-          "Omega:Decomp rearrange edges"                  -       1    -       0.404719     0.404719     0.404719         0.000000 
-            "Omega:rearrangeEdgeArraysBcast"              -     192    -       0.401338     0.009018     0.001908         0.000006 
-            "Omega:rearrangeEdgeArraysSearch"             -     192    -       0.002424     0.000028     0.000006         0.000006 
-          "Omega:Decomp part vertices"                    -       1    -       1.543295     1.543295     1.543295         0.000000 
-            "Omega:partVerticesOwned"                     -       1    -       0.004332     0.004332     0.004332         0.000000 
-            "Omega:partVerticesOwnedBcast"                -     192    -       0.188145     0.001597     0.000830         0.000006 
-            "Omega:partVerticesOwnedSearch"               -     192    -       0.039324     0.000365     0.000128         0.000006 
-            "Omega:partVerticesHalo"                      -       1    -       0.002230     0.002230     0.002230         0.000000 
-            "Omega:partVerticesFinalLoc"                  -       1    -       1.308693     1.308693     1.308693         0.000000 
-              "Omega:partVerticesFinalBcast"              -     192    -       1.145648     0.009474     0.001206         0.000006 
-              "Omega:partVerticesFinalSearch"             -     192    -       0.162852     0.004711     0.000004         0.000006 
-          "Omega:Decomp rearrange vertices"               -       1    -       0.217571     0.217571     0.217571         0.000000 
-            "Omega:rearrangeVertexArraysBcast"            -     192    -       0.215985     0.003256     0.001065         0.000006 
-            "Omega:rearrangeVertexArraysSearch"           -     192    -       0.001224     0.000014     0.000006         0.000006 
-          "Omega:Decomp construct global to local"        -       1    -       0.026781     0.026781     0.026781         0.000000 
-          "Omega:Decomp construct device copy"            -       1    -       0.002043     0.002043     0.002043         0.000000 
-*   "Omega:PIO:PIOc_initdecomp"                           -      13    -       1.224295     0.414926     0.002789         0.000000 
-      "Omega:PIO:box_rearrange_create"                    -      13    -       1.186661     0.393885     0.002738         0.000000 
-*       "Omega:PIO:pio_swapm"                             -      78    -       0.651920     0.094730     0.000129         0.000003 
-*   "Omega:PIO:PIOc_read_darray"                          -      39    -      12.977072     3.703074     0.036536         0.000001 
-      "Omega:PIO:read_darray_nc_serial"                   -      39    -      11.393670     3.503564     0.009719         0.000001 
-      "Omega:PIO:rearrange_io2comp"                       -      39    -       0.377805     0.138084     0.000298         0.000001 
-*   "Omega:PIO:PIOc_freedecomp"                           -      13    -       0.002954     0.001216     0.000037         0.000000 
-  "Omega:RunLoop"                                         -       1    -       1.118418     1.118418     1.118418         0.000000 
-    "Omega:TimeStep"                                      -      60    -       1.118294     0.020033     0.017681         0.000002 
-      "Omega:StateHalo"                                   -      60    -       0.145217     0.003352     0.001784         0.000002 
-      "Omega:TracerHalo"                                  -      60    -       0.088497     0.002117     0.000971         0.000002 
-  "Omega:Finalize"                                        -       1    -       0.013414     0.013414     0.013414         0.000000 
+  "Omega:Init"                                            -       1    -      21.294397    21.294397    21.294397         0.000000 
+    "Omega:PIO:PIOc_Init_Intracomm"                       -       1    -       0.002520     0.002520     0.002520         0.000000 
+    "Omega:Decomp init"                                   -       1    -       8.491340     8.491340     8.491340         0.000000 
+      "Omega:Decomp create"                               -       1    -       8.491302     8.491302     8.491302         0.000000 
+        "Omega:Decomp construct"                          -       1    -       8.490197     8.490197     8.490197         0.000000 
+          "Omega:Decomp read mesh"                        -       1    -       2.744082     2.744082     2.744082         0.000000 
+*           "Omega:PIO:PIOc_sync"                         -       2    -       0.000003     0.000002     0.000001         0.000000 
+*           "Omega:PIO:PIOc_closefile"                    -       2    -       0.000434     0.000225     0.000210         0.000000 
+          "Omega:Decomp part cells"                       -       1    -       0.672172     0.672172     0.672172         0.000000 
+            "Omega:Gather adjacency"                      -       1    -       0.267950     0.267950     0.267950         0.000000 
+            "Omega:Metis partitioning"                    -       1    -       0.390503     0.390503     0.390503         0.000000 
+          "Omega:Decomp rearrange cells"                  -       1    -       0.262178     0.262178     0.262178         0.000000 
+            "Omega:rearrangeCellArrays"                   -       1    -       0.262171     0.262171     0.262171         0.000000 
+              "Omega:rearrangeCellsBcast"                 -     192    -       0.261334     0.026535     0.001116         0.000007 
+              "Omega:rearrangeCellsSearch"                -     192    -       0.000552     0.000012     0.000002         0.000007 
+          "Omega:Decomp part edges"                       -       1    -       2.668269     2.668269     2.668269         0.000000 
+            "Omega:partEdgesOwned"                        -       1    -       0.006914     0.006914     0.006914         0.000000 
+            "Omega:partEdgesOwnerBcast"                   -     192    -       0.215683     0.001900     0.000722         0.000007 
+            "Omega:partEdgesOwnerSearch"                  -     192    -       0.082496     0.000685     0.000352         0.000007 
+            "Omega:partEdgesHalo"                         -       1    -       0.005578     0.005578     0.005578         0.000000 
+            "Omega:partEdgesFinalLoc"                     -       1    -       2.356611     2.356611     2.356611         0.000000 
+              "Omega:partEdgesFinalBcast"                 -     192    -       2.023614     0.016584     0.002327         0.000007 
+              "Omega:partEdgesFinalSearch"                -     192    -       0.332709     0.010107     0.000005         0.000007 
+          "Omega:Decomp rearrange edges"                  -       1    -       0.397720     0.397720     0.397720         0.000000 
+            "Omega:rearrangeEdgeArraysBcast"              -     192    -       0.394217     0.008600     0.001915         0.000007 
+            "Omega:rearrangeEdgeArraysSearch"             -     192    -       0.002520     0.000030     0.000006         0.000007 
+          "Omega:Decomp part vertices"                    -       1    -       1.502271     1.502271     1.502271         0.000000 
+            "Omega:partVerticesOwned"                     -       1    -       0.004326     0.004326     0.004326         0.000000 
+            "Omega:partVerticesOwnedBcast"                -     192    -       0.188636     0.001560     0.000846         0.000007 
+            "Omega:partVerticesOwnedSearch"               -     192    -       0.039321     0.000363     0.000128         0.000007 
+            "Omega:partVerticesHalo"                      -       1    -       0.002276     0.002276     0.002276         0.000000 
+            "Omega:partVerticesFinalLoc"                  -       1    -       1.267083     1.267083     1.267083         0.000000 
+              "Omega:partVerticesFinalBcast"              -     192    -       1.101195     0.009152     0.000999         0.000007 
+              "Omega:partVerticesFinalSearch"             -     192    -       0.165689     0.004712     0.000004         0.000007 
+          "Omega:Decomp rearrange vertices"               -       1    -       0.214752     0.214752     0.214752         0.000000 
+            "Omega:rearrangeVertexArraysBcast"            -     192    -       0.213155     0.003220     0.001050         0.000007 
+            "Omega:rearrangeVertexArraysSearch"           -     192    -       0.001220     0.000014     0.000005         0.000007 
+          "Omega:Decomp construct global to local"        -       1    -       0.026919     0.026919     0.026919         0.000000 
+          "Omega:Decomp construct device copy"            -       1    -       0.001813     0.001813     0.001813         0.000000 
+*   "Omega:PIO:PIOc_initdecomp"                           -      13    -       0.745644     0.301135     0.001736         0.000000 
+      "Omega:PIO:box_rearrange_create"                    -      13    -       0.729757     0.295217     0.001680         0.000000 
+*       "Omega:PIO:pio_swapm"                             -      78    -       0.493329     0.104200     0.000117         0.000003 
+*   "Omega:PIO:PIOc_read_darray"                          -      39    -      13.477096     3.568282     0.036546         0.000001 
+      "Omega:PIO:read_darray_nc_serial"                   -      39    -      11.944285     3.368990     0.009397         0.000001 
+      "Omega:PIO:rearrange_io2comp"                       -      39    -       0.339356     0.136721     0.000290         0.000001 
+*   "Omega:PIO:PIOc_freedecomp"                           -      13    -       0.002166     0.000467     0.000029         0.000000 
+  "Omega:RunLoop"                                         -       1    -       1.108819     1.108819     1.108819         0.000000 
+    "Omega:TimeStep"                                      -      60    -       1.108737     0.022095     0.016921         0.000002 
+      "Omega:StateHalo"                                   -      60    -       0.144846     0.005511     0.001815         0.000002 
+      "Omega:TracerHalo"                                  -      60    -       0.075727     0.001762     0.000981         0.000002 
+  "Omega:Finalize"                                        -       1    -       0.003845     0.003845     0.003845         0.000000 
 
-Overhead sum =  0.000105 wallclock seconds
-Overhead estimate =   0.00124 wallclock seconds
-Overhead bound =   0.00156 wallclock seconds
+Overhead sum =  0.000107 wallclock seconds
+Overhead estimate =   0.00107 wallclock seconds
+Overhead bound =    0.0014 wallclock seconds
 Total calls  = 3131
 
 Multiple parent info for thread 0:
