@@ -145,7 +145,7 @@ void ZonalAvgDiag::initialize_impl(const RunType /*run_type*/) {
                        field_layout.to_string() + "\n");
 
   FieldLayout diagnostic_layout =
-      field_layout.clone().strip_dim(COL).prepend_dim({CMP}, {m_num_zonal_bins}, {"bin"});
+      field_layout.clone().strip_dim(COL).prepend_dim(CMP, m_num_zonal_bins, "bin");
   FieldIdentifier diagnostic_id(m_diag_name, diagnostic_layout, field_id.get_units(),
                                 field_id.get_grid_name());
   m_diagnostic_output = Field(diagnostic_id);
@@ -193,7 +193,7 @@ void ZonalAvgDiag::initialize_impl(const RunType /*run_type*/) {
         val = ncols_per_bin_view(bin_i) > val ? ncols_per_bin_view(bin_i) : val;
       },
       Kokkos::Max<Int>(max_ncols_per_bin));
-  FieldLayout bin_to_cols_layout = ncols_per_bin_layout.append_dim({COL}, {1+max_ncols_per_bin});
+  FieldLayout bin_to_cols_layout = ncols_per_bin_layout.append_dim(COL, 1+max_ncols_per_bin);
   FieldIdentifier bin_to_cols_id("columns in each zonal bin",
     bin_to_cols_layout, FieldIdentifier::Units::nondimensional(),
     field_id.get_grid_name(), DataType::IntType);
