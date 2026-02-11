@@ -261,6 +261,8 @@ Int check_leaf_nodes (const Parallel::Ptr& p, const NodeSets& ns,
   for (const auto& idx : ns.levels[0].nodes) {
 #ifndef NDEBUG
     const auto n = ns.node_h(idx);
+#else
+    (void)idx; // Suppress unused variable warning when NDEBUG is defined
 #endif
     cedr_assert( ! n->nkids);
     ++my_nleaves;

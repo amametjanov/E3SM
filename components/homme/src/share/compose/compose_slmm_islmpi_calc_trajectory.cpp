@@ -430,6 +430,8 @@ interp_v_update (IslMpi<MT>& cm, const Int nets, const Int nete,
 #endif
   slmm_assert(vnode.extent_int(3) == ndim);
   slmm_assert(vdep .extent_int(3) == ndim+1);
+  // Suppress unused variable warning when assertions are disabled
+  (void)ndim;
 
 #ifdef COMPOSE_PORT
   const auto& dep_points = cm.tracer_arrays->dep_points;
