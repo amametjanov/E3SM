@@ -2593,6 +2593,7 @@ int merge_streams(ezxml_t registry){/*{{{*/
 	// First, merge all streams blocks. Regardless of nested stream names.
 	streamsBlock = ezxml_child(registry, "streams");
 	while(streamsBlock->next){
+		// Note: Manual increment inside loop body (line 2605) because iterator is modified during processing
 		for(childStream1 = ezxml_child(streamsBlock->next, "stream"); childStream1; ){
 			if (childStream1->next){
 				lastStream = childStream1->next;
