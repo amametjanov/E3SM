@@ -45,7 +45,7 @@ static const Entry papitable [] = {
   {PAPI_FXU_IDL,"PAPI_FXU_IDL","FXU_IDL ", "PAPI_FXU_IDL    ", "Cycles integer units are idle"},
   {PAPI_FPU_IDL,"PAPI_FPU_IDL","FPU_IDL ", "PAPI_FPU_IDL    ", "Cycles floating point units are idle"},
   {PAPI_LSU_IDL,"PAPI_LSU_IDL","LSU_IDL ", "PAPI_LSU_IDL    ", "Cycles load/store units are idle"},
-  {PAPI_TLB_DM, "PAPI_TLB_DM"  "TLB_DM  ", "Data_TLB_misses ", "Data translation lookaside buffer misses"},
+  {PAPI_TLB_DM, "PAPI_TLB_DM", "TLB_DM  ", "Data_TLB_misses ", "Data translation lookaside buffer misses"},
   {PAPI_TLB_IM, "PAPI_TLB_IM", "TLB_IM  ", "Inst_TLB_misses ", "Instr translation lookaside buffer misses"},
   {PAPI_TLB_TL, "PAPI_TLB_TL", "TLB_TL  ", "Tot_TLB_misses  ", "Total translation lookaside buffer misses"},
   {PAPI_L1_LDM, "PAPI_L1_LDM", "L1_LDM  ", "L1_load_misses  ", "Level 1 load misses"},
