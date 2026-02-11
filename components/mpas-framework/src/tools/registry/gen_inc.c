@@ -2593,7 +2593,7 @@ int merge_streams(ezxml_t registry){/*{{{*/
 	// First, merge all streams blocks. Regardless of nested stream names.
 	streamsBlock = ezxml_child(registry, "streams");
 	while(streamsBlock->next){
-		for(childStream1 = ezxml_child(streamsBlock->next, "stream"); childStream1; childStream1){
+		for(childStream1 = ezxml_child(streamsBlock->next, "stream"); childStream1; ){
 			if (childStream1->next){
 				lastStream = childStream1->next;
 			} else {
@@ -2634,7 +2634,7 @@ int merge_streams(ezxml_t registry){/*{{{*/
 
 				if(strcmp(name, name2) == 0){
 					// Merge child vars
-					for(old_child = ezxml_child(childStream2, "var"); old_child; old_child){
+					for(old_child = ezxml_child(childStream2, "var"); old_child; ){
 						if(old_child->next){
 							tmp_child = old_child->next;
 						} else {
@@ -2645,7 +2645,7 @@ int merge_streams(ezxml_t registry){/*{{{*/
 						old_child = tmp_child;
 					}
 
-					for(old_child = ezxml_child(childStream2, "var_array"); old_child; old_child){
+					for(old_child = ezxml_child(childStream2, "var_array"); old_child; ){
 						if(old_child->next){
 							tmp_child = old_child->next;
 						} else {
@@ -2656,7 +2656,7 @@ int merge_streams(ezxml_t registry){/*{{{*/
 						old_child = tmp_child;
 					}
 
-					for(old_child = ezxml_child(childStream2, "var_struct"); old_child; old_child){
+					for(old_child = ezxml_child(childStream2, "var_struct"); old_child; ){
 						if(old_child->next){
 							tmp_child = old_child->next;
 						} else {
@@ -2667,7 +2667,7 @@ int merge_streams(ezxml_t registry){/*{{{*/
 						old_child = tmp_child;
 					}
 
-					for(old_child = ezxml_child(childStream2, "stream"); old_child; old_child){
+					for(old_child = ezxml_child(childStream2, "stream"); old_child; ){
 						if(old_child->next){
 							tmp_child = old_child->next;
 						} else {
