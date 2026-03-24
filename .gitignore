@@ -63,3 +63,4 @@ components/eamxx/src/python/dist
 components/emulators/build
 **/Testing/**
 **/.cache/**
+__cmake_systeminformation/
