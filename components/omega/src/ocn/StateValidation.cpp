@@ -50,7 +50,7 @@ static std::pair<I4, I4> checkArray2D(const Array2DReal &Arr, I4 NRows,
    parallelReduce(
        "CheckNaN", {NRows, NCols},
        KOKKOS_LAMBDA(int Row, int Col, int &Accum) {
-          if (CellMask(Row, Col) == 0) {
+          if (CellMask(Row, Col) < static_cast<Real>(0.5)) {
              return;
           }
           Real Val = Arr(Row, Col);
@@ -63,7 +63,7 @@ static std::pair<I4, I4> checkArray2D(const Array2DReal &Arr, I4 NRows,
    parallelReduce(
        "CheckBounds", {NRows, NCols},
        KOKKOS_LAMBDA(int Row, int Col, int &Accum) {
-          if (CellMask(Row, Col) == 0) {
+          if (CellMask(Row, Col) < static_cast<Real>(0.5)) {
              return;
           }
           Real Val = Arr(Row, Col);
@@ -94,7 +94,7 @@ static std::pair<I4, I4> checkTracerArray(const Array3DReal &Tracers3D,
    parallelReduce(
        "CheckTracerNaN", {NCells, NVert},
        KOKKOS_LAMBDA(int Cell, int K, int &Accum) {
-          if (CellMask(Cell, K) == 0) {
+          if (CellMask(Cell, K) < static_cast<Real>(0.5)) {
              return;
           }
           Real Val = Tracers3D(TracerIdx, Cell, K);
@@ -107,7 +107,7 @@ static std::pair<I4, I4> checkTracerArray(const Array3DReal &Tracers3D,
    parallelReduce(
        "CheckTracerBounds", {NCells, NVert},
        KOKKOS_LAMBDA(int Cell, int K, int &Accum) {
-          if (CellMask(Cell, K) == 0) {
+          if (CellMask(Cell, K) < static_cast<Real>(0.5)) {
              return;
           }
           Real Val = Tracers3D(TracerIdx, Cell, K);
