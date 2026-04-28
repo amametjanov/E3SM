@@ -37,7 +37,7 @@ namespace OMEGA {
 /// \param[in] AuxState    Auxiliary state containing KineticEnergyCell
 /// \param[in] VCoord      Vertical coordinate containing the CellMask
 /// \param[in] TimeLevel   Time level index to validate (typically 0 = current)
-/// \return Total count of errors found (0 = state is valid)
+/// \return I4 total count of errors found across all checked fields (0 = valid)
 I4 checkOceanState(const OceanState *State, const AuxiliaryState *AuxState,
                    const VertCoord *VCoord, I4 TimeLevel);
 
