@@ -18,6 +18,7 @@
 #include "Decomp.h"
 #include "Dimension.h"
 #include "Error.h"
+#include "Eos.h"
 #include "Field.h"
 #include "Halo.h"
 #include "HorzMesh.h"
@@ -71,6 +72,7 @@ int initStateValidationTest(const std::string &MeshFile) {
    HorzMesh::init();
    VertCoord::init();
    Tracers::init();
+   Eos::init();
 
    int StateErr = OceanState::init();
    if (StateErr != 0) {
@@ -364,6 +366,7 @@ int testStateValidation() {
 
 void finalizeStateValidationTest() {
    Tracers::clear();
+   Eos::destroyInstance();
    OceanState::clear();
    VertAdv::clear();
    VertCoord::clear();
