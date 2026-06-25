@@ -38,8 +38,9 @@ namespace OMEGA {
 /// \param[in] VCoord      Vertical coordinate containing the CellMask
 /// \param[in] TimeLevel   Time level index to validate (typically 0 = current)
 /// \return I4 total count of errors found across all checked fields (0 = valid)
-I4 checkOceanState(const OceanState *State, const AuxiliaryState *AuxState,
-                   const VertCoord *VCoord, I4 TimeLevel);
+std::pair<I4, I4> checkOceanState(const OceanState *State,
+                                  const AuxiliaryState *AuxState,
+                                  const VertCoord *VCoord, I4 TimeLevel);
 
 /// Check ocean state fields for NaN values and out-of-bounds conditions.
 ///
